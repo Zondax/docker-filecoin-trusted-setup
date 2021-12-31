@@ -1,0 +1,1 @@
+docker-filecoin-trusted-setup
