@@ -10,8 +10,6 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 WORKDIR /filecoin
 
-COPY deps/* .
-
 ENV PATH="/root/.cargo/bin:${PATH}"
 
 RUN git clone  https://github.com/filecoin-project/filecoin-phase2.git && \
