@@ -20,7 +20,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=harbor.int.zondax.net/zondax/filecoin-trusted-setup
+          DOCKER_IMAGE=harbor.zondax.net/zondax/filecoin-trusted-setup
           VERSION=edge
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/}

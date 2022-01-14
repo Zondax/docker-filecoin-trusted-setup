@@ -1,2 +1,2 @@
 build:
-	docker build -f Dockerfile -t zondax/filecoin-trusted-setup .
+	docker build -f Dockerfile -t harbor.zondax.net/zondax/filecoin-trusted-setup .
