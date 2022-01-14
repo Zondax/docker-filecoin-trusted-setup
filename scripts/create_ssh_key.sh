@@ -9,5 +9,5 @@
 
 # ---------------------------
 
-ssh-keygen -t rsa
+ssh-keygen -t rsa -f ~/ssh_key -N '' -C ''
 

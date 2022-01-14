@@ -14,11 +14,10 @@ COPY deps/* .
 
 ENV PATH="/root/.cargo/bin:${PATH}"
 
-RUN git clone https://github.com/filecoin-project/rust-fil-proofs.git && \
-    cd rust-fil-proofs && \
-    git checkout a700f68c && \
-    mv ../Cargo.lock . && \
-    cargo build --release --bin phase2
+RUN git clone  https://github.com/filecoin-project/filecoin-phase2.git && \
+    cd filecoin-phase2 && \
+    git checkout empty-sector-update && \
+    cargo build --release --bins
 
 
 FROM ubuntu:21.10 as final
@@ -28,7 +27,7 @@ RUN apt update &&     apt install -y ssh tmux rsync gpg openssh-client
 WORKDIR /filecoin
 
 COPY scripts .
-COPY --from=builder /filecoin/target/release/phase2 /usr/local/bin
+COPY --from=builder /filecoin/filecoin-phase2/target/release/filecoin-phase2 /usr/local/bin/phase2
 
 CMD [ "tail", "-f", "/dev/null" ]
 
