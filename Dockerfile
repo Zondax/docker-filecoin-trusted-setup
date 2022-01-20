@@ -24,7 +24,9 @@ RUN apt update &&     apt install -y ssh tmux rsync gpg openssh-client
 
 WORKDIR /filecoin
 
-COPY scripts .
+COPY scripts ./utils
+RUN mkdir -p ./ceremony
+
 COPY --from=builder /filecoin/filecoin-phase2/target/release/filecoin-phase2 /usr/local/bin/phase2
 
 CMD [ "tail", "-f", "/dev/null" ]
