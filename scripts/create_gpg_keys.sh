@@ -15,7 +15,7 @@
 
 # ---------------------------
 
-participant_name='...'; \
+participant_name=$1; \
       mkdir keyring \
       && gpg --homedir keyring --pinentry-mode loopback --passphrase '' --quick-generate-key "Filecoin trusted-setup esu ${participant_name}" ed25519 default none \
       && gpg --homedir keyring --armor --export > sig_pubkey.asc \
