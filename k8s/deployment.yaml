@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: filecoin-trusted-setup
+  name: filecoin-trusted-setup
+spec:
+  selector:
+    matchLabels:
+      app: filecoin-trusted-setup
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: filecoin-trusted-setup
+    spec:
+      imagePullSecrets:
+        - name: harbor
+      containers:
+        - name: filecoin-trusted-setup
+          image: harbor.zondax.net/zondax/filecoin-trusted-setup:latest
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "4000M"
+              cpu: "4"
+          volumeMounts:
+            - name: filecoin-trusted-setup-pv
+              mountPath: /filecoin/ceremony
+      nodeSelector:
+        type: dedicated
+      volumes:
+        - name: filecoin-trusted-setup-pv
+          persistentVolumeClaim:
+            claimName: filecoin-trusted-setup-pvc

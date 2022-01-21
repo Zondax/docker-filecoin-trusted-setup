@@ -11,12 +11,17 @@
 _Please visit our website at [zondax.ch](zondax.ch)_
 
 ---
-## Building
-Run the following command:
-```
-make build
-```
+## Build&Run
+### Build
+To build the image, you can execute `make build`. The image will have the tag `zondax/filecoin-trusted-setup`
 
+### Run
+To run the container locally, you can execute `make run`. It can be run on a k8s cluster too. In order to do tath, you will find example files on k8s folder. 
+
+**Tips**
+- If you mount a volume on the container, you will keep files you don't want to lose, like PGP and SSH key (if you generated them inside the container)
+- You can use `tmux` to avoid losing the current work if terminal gets closed.
+- Using `tmux`, you can run multiple task at the same time. For contribution step, it would be very handy. Please check this [doc](https://tmuxcheatsheet.com) to know useful commands
 --- 
 ## Ceremony
 
