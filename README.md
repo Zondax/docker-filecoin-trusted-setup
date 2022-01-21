@@ -1,7 +1,18 @@
 # Docker Filecoin Trusted Setup
 
-## Building
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Pre-Release](https://github.com/zondax/docker-filecoin-trusted-setup/actions/workflows/pre-release.yaml/badge.svg)](https://github.com/zondax/docker-filecoin-trusted-setup/actions/workflows/pre-release.yaml)
+[![Release](https://github.com/zondax/docker-filecoin-trusted-setup/actions/workflows/publish.yaml/badge.svg)](https://github.com/zondax/docker-filecoin-trusted-setup/actions/workflows/publish.yaml)
 
+---
+
+![zondax](docs/zondax.jpg)
+
+_Please visit our website at [zondax.ch](zondax.ch)_
+
+---
+## Building
+Run the following command:
 ```
 make build
 ```
